@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.imgur.com/pb3uoWW.png">
+    <title>Encriptar Mensagem</title>
+    <link rel="stylesheet" href="{% static '/css/style.encript.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'chave' %}">Criar Chave Pública</a>
+            <a href="{% url 'encriptar' %}">Encriptar</a>
+            <a href="{% url 'desencriptar' %}">Desencriptar</a>
+        </nav>
+    </header>        
+        <section class="texto" id="texto">
+            <h2 class="texto-titulo">ENCRIPTAR MENSAGEM</h3>
+            <p>Digite, respectivamente, <strong>a chave pública </strong></p>
+            <p>e a <strong>mensagem</strong> que será encriptada:</p>
+            <form method="post">
+                {% csrf_token %}
+                <input name="chave" type="text" placeholder="Digite aqui a chave pública" required>
+                <input name="mensagem" type="text" placeholder="Digite aqui a mensagem a ser criptografada" required>
+                <input type="submit" value="Enviar >">
+            </form>
+            {% if mensagem %}
+                <p><b>{{ mensagem }}</b></p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

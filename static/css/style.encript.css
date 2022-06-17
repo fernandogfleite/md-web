@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Titillium+Web:ital@0;1&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: #ffc04c;
+}
+
+header{
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 18px;
+}
+
+
+header > nav{
+    display: flex;
+    gap: 18px;
+    font-family: 'Titillium Web', sans-serif;
+    margin-right: 5%;
+}
+
+body{
+    background: url("../images/K1TdiSg.jpg");
+    background-size: cover;
+}
+
+
+
+.texto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Titillium Web', sans-serif;
+    text-align: center;
+}
+
+.texto-titulo{
+    border-top: 1px solid #ffc04c;
+    padding: 12px 2vh;
+}
+
+

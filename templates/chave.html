@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.imgur.com/pb3uoWW.png">
+    <title>Criar Chave Pública</title>
+    <link rel="stylesheet" href="{% static '/css/style.chave.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'chave' %}">Criar Chave Pública</a>
+            <a href="{% url 'encriptar' %}">Encriptar</a>
+            <a href="{% url 'desencriptar' %}">Desencriptar</a>
+        </nav>
+    </header>        
+        <section class="texto" id="texto">
+            <h2 class="texto-titulo">CRIAR CHAVE PÚBLICA</h3>
+            <p></p>
+            <p>Digite um par de números primos <strong>p</strong> e <strong>q</strong></p>
+            <p>e um expoente<strong> 'e'</strong> relativamente primo</p>
+            <p>a (p − 1)(q − 1):</p>
+            <form method="post">
+                {% csrf_token %}
+                <input name="primo_p" type="number" placeholder="Digite aqui P" required>
+                <input name="primo_q" type="number" placeholder="Digite aqui Q" required>
+                <input name="expoente_e" type="number" placeholder="Digite aqui E" required>
+                <input type="submit" value="Enviar">
+            </form>
+            {% if mensagem %}
+                <p><b>{{ mensagem }}</b></p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>
