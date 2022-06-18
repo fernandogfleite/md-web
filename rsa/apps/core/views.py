@@ -13,7 +13,7 @@ def encrypt_view(request):
         try:
             n = int(chave[0])
             e = int(chave[1])
-        except ValueError:
+        except Exception:
             erros['mensagem'] = "Chave pública inválida"
 
             return render(request, 'encriptar.html', erros)
